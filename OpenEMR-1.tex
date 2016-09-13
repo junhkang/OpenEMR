@@ -1,0 +1,158 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Iowa, Professor Omar Haider} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Launching OpenEMR \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Junhyuk Kang} % Your name
+
+\date{Sep 6, 2016 ~ Sep 12, 2016 } % Today's date or a custom date
+
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Instruction}
+
+$ http://www.open-emr.org/wiki/index.php/OpenEMR_Installation_Guides $
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\section{Steps}
+
+%------------------------------------------------
+
+\begin{itemize}
+	\item Download  xampp-openemr-4.2.2.zip  file from \\ 
+		$http://www.open-emr.org/wiki/index.php/OpenEMR_4.2.1_XAMPP_Package_Installation$
+	\item Extract to C:
+	\item Download Openemr-4.2.1.zip from \\ 
+		$http://www.open-emr.org/wiki/index.php/OpenEMR_4.2.1_Windows_Installation$
+	\item Extract Openemr-4.2.1 on C: /xampp/ htdocs
+	\item Run C:/xampp/xampp-control as Administrator
+		\begin{itemize}
+			\item Got error about Authorization because I did not run it as administrator 
+		\end{itemize}	
+	\item Click the red X to left of Apache
+	\item Click the red X to left of MySQL
+			\begin{itemize}
+				\item Got error about MySQL does not have all prerequisites, so redownloaded MySQL
+			\end{itemize}	
+			\begin{itemize}
+				\item Got error about MySQL port 3306 is already in use so I changed port name \\3306 on "my.cnf" into 3307
+			\end{itemize}	
+	\item Connect to $http://localhost/openemr$
+			\begin{itemize}
+				\item Got error about \\ {\tiny Notice: Undefined index: state in C:/xampp/htdocs/openemr/setup.php on line 14}\\
+					{\tiny Notice: Undefined index: iuser in C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 13}\\
+					{\tiny Notice: Undefined index: iuserpass in C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 14}\\
+					{\tiny Notice: Undefined index: iuname in C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 15}\\
+					{\tiny Notice: Undefined index: iufname in  C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 16}\\
+					{\tiny Notice: Undefined index: igroup in  C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 17}\\
+					{\tiny Notice: Undefined index: server in  C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 18}\\
+					{\tiny Notice: Undefined index: loginhost in  C:/xampp/htdocs/openemr/library/classes/Installer.class.php on line 19}
+			\end{itemize}
+			\begin{itemize}
+				\item Changed values on php.ini file into \\
+					{\tiny short open tag = Off }\\
+					{\tiny max execution time = 60} \\
+					{\tiny max input time = 90} \\
+					{\tiny max input vars = 3000} \\
+					{\tiny memory limit = 128M} \\
+					{\tiny display errors = Off} \\
+					{\tiny log errors = On} \\
+					{\tiny register globals = Off} \\
+					{\tiny post max size = 30M} \\
+					{\tiny file uploads = On} \\
+					{\tiny upload max filesize = 30M} \\
+					{\tiny error reporting = E ALL E NOTICE E STRICT}
+			\end{itemize}
+	\item OpenEMR setup 1: Check 'Have setup create the database' and click continue
+	\item OpenEMR setup 2 
+			\begin{itemize}
+					\item Change MySQL port into 3307
+					\item Changed MySQL root password by making file; C:/mysql-init.txt\\
+						Text: ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass'; 
+					\item Used command \\ 
+						C:/> cd "C:/Program Files/MySQL/MySQL Server 5.7/bin"\\
+						C:/> mysqld --init-file=C://mysql-init.txt C:/program files/MySQL/Mysql server 5.bin
+					\item Got error about database name is already used
+					\item Changed MySQL database name from 'openemr' into 'kanhyuk' (my own ID)
+					\item Login to OpenEMR with my username and password
+			\end{itemize}
+
+
+\end{itemize}
+
+
+
+
+
+
+\end{document}
