@@ -1,0 +1,19 @@
+id,section_value,allow,enabled,return_value,note,updated_date
+10,system,1,1,write,Administrators can do anything,1473034440
+11,system,1,1,view,Things that physicians can only read,1473034441
+12,system,1,1,addonly,Things that physicians can read and enter but not modify,1473034442
+13,system,1,1,wsome,Things that physicians can read and partly modify,1473034442
+14,system,1,1,write,Things that physicians can read and modify,1473034443
+15,system,1,1,view,Things that clinicians can only read,1473034443
+16,system,1,1,addonly,Things that clinicians can read and enter but not modify,1473034443
+17,system,1,1,wsome,Things that clinicians can read and partly modify,1473034444
+18,system,1,1,write,Things that clinicians can read and modify,1473034444
+19,system,1,1,view,Things that front office can only read,1473034445
+20,system,1,1,addonly,Things that front office can read and enter but not modify,1473034445
+21,system,1,1,wsome,Things that front office can read and partly modify,1473034445
+22,system,1,1,write,Things that front office can read and modify,1473034445
+23,system,1,1,view,Things that back office can only read,1473034445
+24,system,1,1,addonly,Things that back office can read and enter but not modify,1473034445
+25,system,1,1,wsome,Things that back office can read and partly modify,1473034446
+26,system,1,1,write,Things that back office can read and modify,1473034446
+27,system,1,1,write,Emergency Login user can do anything,1473034446

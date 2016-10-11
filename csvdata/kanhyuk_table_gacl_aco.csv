@@ -1,0 +1,43 @@
+id,section_value,value,order_value,name,hidden
+10,acct,bill,10,Billing (write optional),0
+11,acct,disc,10,Price Discounting,0
+12,acct,eob,10,EOB Data Entry,0
+13,acct,rep,10,Financial Reporting - my encounters,0
+14,acct,rep_a,10,Financial Reporting - anything,0
+15,admin,super,10,Superuser,0
+16,admin,calendar,10,Calendar Settings,0
+17,admin,database,10,Database Reporting,0
+18,admin,forms,10,Forms Administration,0
+19,admin,practice,10,Practice Settings,0
+20,admin,superbill,10,Superbill Codes Administration,0
+21,admin,users,10,Users/Groups/Logs Administration,0
+22,admin,batchcom,10,Batch Communication Tool,0
+23,admin,language,10,Language Interface Tool,0
+24,admin,drugs,10,Pharmacy Dispensary,0
+25,admin,acl,10,ACL Administration,0
+26,encounters,auth,10,Authorize - my encounters,0
+27,encounters,auth_a,10,Authorize - any encounters,0
+28,encounters,coding,10,Coding - my encounters (write,
+29,encounters,coding_a,10,Coding - any encounters (write,
+30,encounters,notes,10,Notes - my encounters (write,
+31,encounters,notes_a,10,Notes - any encounters (write,
+32,encounters,date_a,10,Fix encounter dates - any encounters,0
+33,encounters,relaxed,10,Less-private information (write,
+34,lists,default,10,Default List (write,
+35,lists,state,10,State List (write,
+36,lists,country,10,Country List (write,
+37,lists,language,10,Language List (write,
+38,lists,ethrace,10,Ethnicity-Race List (write,
+39,patientportal,portal,10,Patient Portal,0
+40,menus,modle,10,Modules,0
+41,patients,appt,10,Appointments (write,
+42,patients,demo,10,Demographics (write,
+43,patients,med,10,Medical/History (write,
+44,patients,trans,10,Transactions (write optional),0
+45,patients,docs,10,Documents (write,
+46,patients,notes,10,Patient Notes (write,
+47,patients,sign,10,Sign Lab Results (write,
+48,sensitivities,normal,10,Normal,0
+49,sensitivities,high,20,High,0
+50,placeholder,filler,10,Placeholder (Maintains empty ACLs),0
+51,nationnotes,nn_configure,10,Nation Notes Configure,0

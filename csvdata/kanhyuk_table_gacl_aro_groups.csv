@@ -1,0 +1,8 @@
+id,parent_id,lft,rgt,name,value
+10,0,1,14,OpenEMR Users,users
+11,10,2,3,Administrators,admin
+12,10,4,5,Clinicians,clin
+13,10,6,7,Physicians,doc
+14,10,8,9,Front Office,front
+15,10,10,11,Accounting,back
+16,10,12,13,Emergency Login,breakglass

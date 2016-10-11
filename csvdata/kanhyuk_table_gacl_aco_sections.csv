@@ -1,0 +1,12 @@
+id,value,order_value,name,hidden
+10,acct,10,Accounting,0
+11,admin,10,Administration,0
+12,encounters,10,Encounters,0
+13,lists,10,Lists,0
+14,patients,10,Patients,0
+15,squads,10,Squads,0
+16,sensitivities,10,Sensitivities,0
+17,placeholder,10,Placeholder,0
+18,nationnotes,10,Nation Notes,0
+19,patientportal,10,Patient Portal,0
+20,menus,10,Menus,0
