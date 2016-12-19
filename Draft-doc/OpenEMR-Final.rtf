@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg949\cocoartf1504\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red9\green80\blue208;\red0\green0\blue0;
+\red255\green255\blue255;\red13\green0\blue129;\red235\green236\blue237;\red36\green38\blue41;\red114\green121\blue129;
+\red104\green26\blue29;\red13\green103\blue1;\red255\green255\blue255;\red0\green0\blue173;\red210\green0\blue5;
+\red252\green106\blue8;}
+{\*\expandedcolortbl;\csgray\c100000;\cssrgb\c20000\c20000\c20000;\cssrgb\c0\c41176\c85098;\csgray\c0;
+\csgray\c100000;\cssrgb\c6275\c6275\c58039;\cssrgb\c93725\c94118\c94510;\cssrgb\c18824\c20000\c21176;\cssrgb\c52157\c54902\c57647;
+\cssrgb\c49020\c15294\c15294;\cssrgb\c0\c46667\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c73333;\cssrgb\c86667\c0\c0;
+\cssrgb\c100000\c50196\c0;}
+\margl1440\margr1440\vieww25400\viewh13220\viewkind0
+\deftab720
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\fs36 \cf2 \expnd0\expndtw0\kerning0
+OpenEMR
+\fs26\fsmilli13333 \
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 Name : Junhyuk Kang\
+Professor: Omar Haider Chowdhury, University of Iowa\
+Goal : Change the log source and let OpenEMR saves the log for simple mouse capturing actions.\
+\'a0\
+Steps
+\fs26\fsmilli13333 \
+1.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 Find the part where OpenEMR saves each logs\
+2.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 Find Mouse capturing codes for PHP\
+3.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 Modify the codes inside the OpenEMR log code\
+\'a0\
+Hypothesis\
+1.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 Each of the actions (ex, log in, log out, or export which log saves the actions) has the code line which saves its action into the log files. (Each of the action codes have Log saving code end of it)\
+2.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 There is one PHP files which set every log saving conditions.\
+\'a0\
+Answers\
+1.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 I tried to open the detail action codes such as Login/Logout which records their action in the logs.\
+2.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 But there is no code line for saving logs at all\
+3.     Tried to search all the \'91log\'92 inside the actions files, but there is nothing related to log.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\fs26\fsmilli13333 \
+4.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 So I realized that my first Hypothesis is not true ( Each of the actions has log writing codes inside it)\
+5.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 So I moved into second hypothesis (There is a PHP file which set every log savings)\
+6.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 I looked over all the files inside OpenEMR, but Most related one was only logview.php or server-log files.\
+7.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 After I got problem in this step, I realized that our previous report which related to the Gacl, which gives the permission to each user.\
+8.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 In log file, every users\'92 actions are recorded in log, even the admin, and registering, making new account, and even making new databases.\
+9.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs26\fsmilli13333 I made new Hypothesis that \'93log\'94 source is not in OpenEMR, they might be in upper directories which can control above OpenEMR (such as XAMPP)\
+10.
+\f1\fs18\fsmilli9333 \'a0\'a0 
+\f0\fs26\fsmilli13333 I started me XAMPP initiating files to find the log sources.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0
+\f0\fs26\fsmilli13333 \
+11.
+\f1\fs18\fsmilli9333 \'a0\'a0 
+\f0\fs26\fsmilli13333 But there was nothing about log inside it.\
+12.
+\f1\fs18\fsmilli9333 \'a0\'a0 
+\f0\fs26\fsmilli13333 Found the online source which explains how the log writing codes acts.\
+	A.
+\f1\fs18\fsmilli9333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 {\field{\*\fldinst{HYPERLINK "https://httpd.apache.org/docs/2.4/mod/mpm_common.html#pidfile"}}{\fldrslt 
+\f0\fs26\fsmilli13333 \cf3 \ul \ulc3 https://httpd.apache.org/docs/2.4/mod/mpm_common.html#pidfile}}
+\f0\fs26\fsmilli13333 \
+13.
+\f1\fs18\fsmilli9333 \'a0\'a0 
+\f0\fs26\fsmilli13333 I saw that most of the log works are done by apache or mysql so I started from apache folder\
+14.
+\f1\fs18\fsmilli9333 \'a0\'a0 
+\f0\fs26\fsmilli13333 On php.ini file, I found the error log message source inside it.\
+15. There are few more options for log sending (Ex, where they save error log( php_errors.log in this case) and do they show that errors, and listening ports)\
+16. Our original log source is working properly, so I just keep the default settings. ( I allowed all listening ports when I first installed OpenEMR so that will not make any errors)\
+17. I was not sure about that is this php.ini file only covers error log or both error logs and actions logs but I found this log settings on middle of php.ini file\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f2\fs22 \cf4 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 	; The path to a log file that will log all mail() calls. Log entries include\
+	; the full path of the script, line number, To address and headers.\
+	;mail.log =\
+	; Log mail to syslog (Event Log on Windows).\
+	;mail.log = syslog
+\f0\fs26\fsmilli13333 \cf2 \cb5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+18. This makes new setting for the mail logs, so I realize that this php.ini file also can handle actions logs, so I decided to put my new mouse capturing coes inside this file.\
+19. The first source that I found was \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf6 \cb7 	var\cf8  coords=[];\
+\cf6 	var\cf8  callback = \cf6 function\cf8 (e) \{\
+    \cf9 // save your mouse coordinates somewhere\cf8 \
+    coords.push(\{x:e.clientX,y:e.clientY\});\
+	\}\
+	document.body.addEventListener(\cf10 'mousemove'\cf8 ,callback,\cf6 true\cf8 );
+\f0\fs26\fsmilli13333 \cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf2 20.  Also, I found that \
+	bool ncurses_getmouse( array $mevent ) returns false if a mouse event is actually visible in given window, otherwise returns true.\
+21.  So I changed it to\
+	
+\f3\fs28 \cf11 \cb12 switch\'a0(\cf13 ncurses_getch\cf11 ())\{\cb5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb12 \'a0\'a0	case\'a0\cf13 NCURSES_KEY_MOUSE\cf11 :\cb5 \
+\cb12 \'a0\'a0\'a0\'a0	if\'a0(!\cf13 ncurses_getmouse\cf11 (\cf13 $mevent\cf11 ))\{\cb5 \
+\cb12 \'a0\'a0\'a0\'a0\'a0\'a0	if\'a0(\cf13 $mevent\cf11 [\cf14 "mmask"\cf11 ]\'a0&\'a0(\cf13 NCURSES_MOUSE_BUTTON1_PRESSED || NCURSES_MOUSE_BUTTON1_PRESSED\cf11 )\{\cb5 \
+\cb12 \'a0\'a0\'a0\'a0\'a0\'a0\'a0	\'a0\cf13 $mouse_x\'a0\cf11 =\'a0\cf13 $mevent\cf11 [\cf14 "x"\cf11 ];\'a0\cf15 //\'a0Save\'a0mouse\'a0position\cb5 \
+\cb12 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0	\cf13 $mouse_y\'a0\cf11 =\'a0\cf13 $mevent\cf11 [\cf14 "y"\cf11 ];\cb5 \
+\cb12 \'a0\'a0\'a0\'a0\'a0\'a0	\}\cb5 \
+\cb12 \'a0\'a0\'a0\'a0	\}\cb5 \
+\cb12 \'a0\'a0	break;\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb5 22. On new php.ini file has  line with \
+
+\f2\fs22 \cf4 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 ; The path to a log file that will log all mail() calls. Log entries include\
+; the full path of the script, line number, To address and headers.\
+;mail.log =\
+; Log mail to syslog (Event Log on Windows).\
+;mail.log = syslog\
+\
+;switch\'a0(ncurses_getch())\{\
+;case\'a0NCURSES_KEY_MOUSE:\
+;if\'a0(!ncurses_getmouse($mevent))\{\
+;if\'a0($mevent["mmask"]\'a0&\'a0(NCURSES_MOUSE_BUTTON1_PRESSED || NCURSES_MOUSE_BUTTON1_PRESSED)\{\
+;\'a0$mouse_x\'a0=\'a0$mevent["x"];\'a0//\'a0Save\'a0mouse\'a0position\
+; $mouse_y\'a0=\'a0$mevent["y"];\
+;\}\
+;\}\
+;break;\
+
+\f0\fs26\fsmilli13333 \cf2 \cb5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 24. This codes only saves the X, Y points in the variable and doesn\'92t write into log file. ( we can write it by using #19 codes ( document.body.addEventListener ) to leave it as log).\
+23. This code will save X, Y coordinates of the OpenEMR webpage when user clicks left button or right button on the webpage\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf11 \cb5 \
+}
